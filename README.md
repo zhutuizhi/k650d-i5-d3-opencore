@@ -31,7 +31,7 @@
 - ApplePS2SmartTouchPad驱动触控板，驱动来着网络，但好像是debug版，-v有大量log。
 - wi-fi ar9565用修改过的AirPortAtheros40.kext直接替换驱动，自动蓝牙需切windows在切macos才能正常使用，睡眠唤醒后wifi和蓝牙都不正常。10.14及以上应整个替换IO80211。
 - SMCBatteryManager驱动电池，由于dsdt电池部分没有超过8位的，所以电池驱动可以直接使用，若用APCIBatterManager，电量100%时有时显示不正常。所以SMCBatteryManager更好。不放电池驱动时，可以在偏好设置-键盘-快捷键设置亮度调节快捷键入F8,F9. 改完后在放电池驱动，快捷键仍然有效。
-- 已解锁CFG Lock，参考了https://www.misonsky.cn/115.html。虽然kernel-Quirks-AppleXcpmCfgLock仍然打了Yes。
+- 已解锁CFG Lock，参考了 [云屋小站](https://www.misonsky.cn/115.html) , 虽然kernel-Quirks-AppleXcpmCfgLock仍然打了Yes。
 
 ## SSDT简述
 
