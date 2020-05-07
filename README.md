@@ -1,3 +1,9 @@
+# 2020.5.7更新
+- 更换屏幕为N156HHE-GA1，解决10.13以上轻微闪屏问题。已注入该屏修改过的EDID（屏不同EDID不同，应对应修改）。
+- 系统升级为10.15.4，opencore 升级0.5.8. 
+- AppleALC用自己修改的layout-id 18。
+- wifi换用bcm4322，替换10.14的IO80211Family。
+
 # k650d-i5-d3-opencore
 
 分享一个opencore的配置，仅供参考，系统macOS 10.12.6。装的是双硬盘4系统，win10+macos+deepin+freebsd,通过Misc-Entries添加各系统引导（无法直接用，建议Misc-Security-ScanPolicy选0），Misc-Security-ScanPolicy选0时，会扫描出一些无用项，比如扫描出来的windows无法引导的。
@@ -14,15 +20,6 @@
 | Wi-Fi   | AR9565+BT4.0    |
 
 
-| 驱动    | 版本                           |
-| -------- | -------------------------- |
-| Lilu    | 1.4.3 |
-| whatevergreen   | 1.3.8   |
-| AppleALC   | 1.4.6       |
-| VirtualSMC     | 1.1.2      |
-| ReeltekRTL8111  | 2.2.2     |
-| ApplePS2SmartTouchPad.kext  | 4.6.8      |
-
 
 ## 概述
 
@@ -32,7 +29,7 @@
 - wi-fi ar9565用修改过的AirPortAtheros40.kext直接替换IO80211Family下的驱动，所以不体现在EFI下，自带蓝牙需切windows后再切macos才能正常使用，睡眠唤醒后wifi和蓝牙都不正常，似乎因为蓝牙会秒醒，无线网卡用BCM4322不会秒醒。10.14及以上应整个替换IO80211Family. [AirPortAtheros40](https://www.insanelymac.com/forum/topic/312045-atheros-wireless-driver-os-x-101112-for-unsupported-cards/?do=findComment&comment=2509900)。
 - SMCBatteryManager驱动电池，由于dsdt电池部分没有超过8位的，所以电池驱动可以直接使用，若用APCIBatterManager，电量100%时有时显示不正常，有时会报没电。所以SMCBatteryManager更好。不放电池驱动时，可以在偏好设置-键盘-快捷键设置亮度调节快捷键为F8,F9. 改完后再放电池驱动，快捷键仍然有效。
 - 已解锁CFG Lock，参考了 [云屋小站](https://www.misonsky.cn/115.html) , 但kernel-Quirks-AppleXcpmCfgLock仍然打了Yes。
-- USBPorts.kext需用hackintool自己生成。
+
 
 ## SSDT简述
 
