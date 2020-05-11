@@ -1,5 +1,7 @@
-
-- 20200510    10.15.4下ApplePS2SmartTouchPad驱动有时会不加载，导致键盘不可用，用VoodooPS2Controller代替了，触控板无法驱动。
+- 20200511   
+使能PowerTimeOutKernelPanic，修复睡眠唤醒内核崩溃（原因AppleHDAHDMI_DPDriver::setPowerState）。
+- 20200510    
+10.15.4下ApplePS2SmartTouchPad驱动有时会不加载，导致键盘不可用，用VoodooPS2Controller代替了，触控板无法驱动。
 
 # 2020.5.7更新
 - 更换屏幕为N156HHE-GA1，解决10.13以上轻微闪屏问题。已注入该屏修改过的EDID（屏不同EDID不同，应对应修改）。
