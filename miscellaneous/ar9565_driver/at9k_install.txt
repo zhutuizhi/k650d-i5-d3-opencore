@@ -1,0 +1,11 @@
+1、Install ATH9KFixup.kext to OC （ATH9KFixup.kext用正使用着的Lilu从源码编译过来的。）
+2、Install 10.13 IO80211Family.kext to LE
+3、Install ATH9KInjector to LE
+4、Rebuild Cache and Repair Permission
+5、Boot args:
+
+AR946X: (Default)
+AR9485: -ath9485
+AR9565: -ath9565
+
+10.15下，冷启动Wi-Fi不能用，从win重启进入，能用，但可能会卡kernel Panic，或者显卡驱动有问题，再重启则ok。
